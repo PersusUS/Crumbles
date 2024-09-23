@@ -16,7 +16,7 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
         })
         .then(response => response.json())
         .then(data => {
-            const summary = data[0]?.summary_text || "No se pudo generar un resumen."; // Obtiene el resumen generado
+            const summary = data[0]?.summary_text || "No se pudo generar el resumen."; // Obtiene el resumen generado
             // Almacena el resumen en el almacenamiento local para mostrarlo en el popup
             chrome.storage.local.set({ cookieSummary: summary });
         })
